@@ -18,6 +18,16 @@ import UIKit.UIGestureRecognizerSubclass
     func menuItemWasDeactivated(item:JonItem)
 }
 
+extension UIWindow {
+    static var key: UIWindow? {
+        if #available(iOS 13, *) {
+            return UIApplication.shared.windows.first { $0.isKeyWindow }
+        } else {
+            return UIApplication.shared.keyWindow
+        }
+    }
+}
+
 @objc open class JonContextMenu:NSObject{
     
     /// The items to be displayed
@@ -145,7 +155,7 @@ import UIKit.UIGestureRecognizerSubclass
         
       @objc  init(_ properties:JonContextMenu){
             super.init(target: nil, action: nil)
-            guard let window = UIApplication.shared.keyWindow else{
+        guard let window = UIWindow.key else{
                 fatalError("No access to UIApplication Window")
             }
             self.window     = window
