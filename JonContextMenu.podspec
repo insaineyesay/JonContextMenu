@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
   s.author = { "Jonathan Martins" => "jon.martinsu@gamil.com" }
   s.platform     = :ios
   s.ios.deployment_target = "13.0"
-  s.source       = { :git => "https://github.com/insaineyesay/JonContextMenu.git", :tag => "#{s.version}"}
+  s.source       = { :git => "https://github.com/jonSurrey/JonContextMenu.git", :tag => "#{s.version}"}
   s.source_files  = "JonContextMenu/JonContextMenu/**/*.{swift}"
 s.swift_version = "4.1" 
 s.requires_arc = true
