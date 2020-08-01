@@ -155,10 +155,10 @@ extension UIWindow {
         
       @objc  init(_ properties:JonContextMenu){
             super.init(target: nil, action: nil)
-        guard let window = UIWindow.key else{
-                fatalError("No access to UIApplication Window")
-            }
-            self.window     = window
+//        guard let window = UIWindow.key else{
+//                fatalError("No access to UIApplication Window")
+//            }
+//            self.window     = window
             self.properties = properties
             addTarget(self, action: #selector(setupTouchAction))
         }
